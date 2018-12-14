@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thoughtorama{% endblock %}
+
+{% block body %}
+    {% if comments %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Comment Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{ comment }}</td>
+                        <td>
+                            <a href="/comment/1" class="btn btn-dark">Show</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No Comments to display</p>
+    {% endif %}
+{% endblock %}
